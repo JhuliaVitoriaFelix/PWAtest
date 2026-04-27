@@ -6,8 +6,7 @@ const ASSETS_TO_CACHE = [
   'index.html',
   'style.css',
   'manifest.json',
-  // Caso você baixe a logo e coloque na pasta do projeto, adicione o caminho aqui:
-  // 'logo.png' 
+  'LogoItaipu.png' 
 ];
 
 // Evento de Instalação
