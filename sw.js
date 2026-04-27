@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
   'index.html',
   'style.css',
   'manifest.json',
-  'LogoItaipu.png' 
+  'Images/LogoItaipu.png' 
 ];
 
 self.addEventListener('install', (e) => {
