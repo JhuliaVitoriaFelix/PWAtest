@@ -1,6 +1,5 @@
 const CACHE_NAME = 'pwa-itaipu-v1';
 
-// Lista de arquivos que devem ser cacheados para funcionar offline
 const ASSETS_TO_CACHE = [
   '/',
   'index.html',
@@ -9,7 +8,6 @@ const ASSETS_TO_CACHE = [
   'LogoItaipu.png' 
 ];
 
-// Evento de Instalação
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Instalando e cacheando assets');
   e.waitUntil(
@@ -19,7 +17,6 @@ self.addEventListener('install', (e) => {
   );
 });
 
-// Evento de Ativação (Útil para limpar caches antigos quando você atualizar o app)
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keyList) => {
@@ -33,7 +30,6 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Evento de Fetch (Recupera do cache ou busca na rede)
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => {

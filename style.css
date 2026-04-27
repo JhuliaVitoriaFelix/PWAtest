@@ -44,7 +44,7 @@ body {
     font-size: 1rem;
     font-weight: 600;
     color: #ffffff;
-    background-color: #00529b; /* Cor institucional azul */
+    background-color: #00529b; 
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -61,7 +61,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Efeito hover para desktop */
+
 @media (min-width: 768px) {
     .btn:hover {
         background-color: #0066c0;
