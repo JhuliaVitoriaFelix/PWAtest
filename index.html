@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro PWA</title>
+    <title>Itaipu Parquetec - PWA</title>
     <link rel="manifest" href="manifest.json">
-    <style>
-        body { 
-            font-family: sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            background-color: #f0f2f5;
-        }
-        .card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="card">
-        <h1>Olá, Jhulia! 👋</h1>
-        <p>Bem-vinda ao seu primeiro PWA funcional.</p>
+        <header class="header">
+            <img src="https://www.itaipuparquetec.org.br/wp-content/uploads/2024/02/Logo-Itaipu-Parquetec.png" alt="Logo Itaipu Parquetec" class="logo">
+        </header>
+
+        <p class="welcome-text">Selecione uma opção:</p>
+
+        <nav class="button-group">
+            <button class="btn" onclick="navegar('mapa')">
+                <span class="icon">📍</span> Visualizar Mapa
+            </button>
+            
+            <button class="btn" onclick="navegar('estatisticas')">
+                <span class="icon">📊</span> Ver Estatísticas
+            </button>
+            
+            <button class="btn" onclick="navegar('tutorial')">
+                <span class="icon">📖</span> Como Usar o App
+            </button>
+        </nav>
     </div>
 
     <script>
+        // Mantendo seu registro de Service Worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
+        }
+
+        function navegar(destino) {
+            console.log("Indo para: " + destino);
+            // Aqui você pode mudar o window.location ou abrir um modal
+            alert("Navegando para: " + destino);
         }
     </script>
 </body>
