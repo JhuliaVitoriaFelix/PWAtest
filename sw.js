@@ -1,12 +1,15 @@
-const CACHE_NAME = 'pwa-itaipu-v1';
+const CACHE_NAME = 'pwa-itaipu-v3';
 
 const ASSETS_TO_CACHE = [
   '/',
   'index.html',
+  'tutorial.html', // <-- Adicionado aqui!
   'style.css',
   'manifest.json',
   'Images/LogoItaipu.png' 
 ];
+
+// ... o resto do arquivo continua exatamente igual
 
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Instalando e cacheando assets');

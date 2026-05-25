@@ -96,15 +96,14 @@
     </footer>
 
     <script>
-        // Registro do Service Worker original
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
         }
 
-        // Função de navegação original
+        // Nova função de navegação
         function navegar(destino) {
-            console.log("Indo para: " + destino);
-            alert("Navegando para: " + destino);
+            // Redireciona para a página baseada no nome do destino
+            window.location.href = destino + '.html';
         }
     </script>
 </body>
