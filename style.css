@@ -1,159 +1,126 @@
+:root {
+    --bg-color: #f4f7f9;
+    --text-main: #0b2545;
+    --text-muted: #4a5568;
+    --primary-color: #00529b; /* Cor original do tema Itaipu */
+    --primary-hover: #003d73;
+    --card-bg: #ffffff;
+    --border-radius: 16px;
+}
+
+body { 
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5%;
-    
-    /* Efeito de Vidro (Fundo semi-transparente + Desfoque) */
-    background-color: rgba(255, 255, 255, 0.75); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    
-    /* Fixa no topo elegantemente */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    padding: 1.5rem 5%;
+    background-color: var(--bg-color);
 }
 
 .nav-brand {
     font-size: 1.5rem;
-    font-weight: 800;
-    /* Gradiente sutil no texto da logo */
-    background: linear-gradient(135deg, #00529b, #0088ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .nav-links {
-    display: none; /* Mantém responsivo (esconde no celular) */
-    gap: 2.5rem;
+    display: none;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #475569; /* Um cinza-azulado chique em vez de preto */
-    font-weight: 500;
+    color: var(--text-main);
+    font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-/* Sublinhado animado nos links ao passar o mouse */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #00529b;
-    transition: width 0.3s ease;
-    border-radius: 2px;
 }
 
 .nav-links a:hover {
-    color: #00529b;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
+    color: var(--primary-color);
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-/* ================= BOTÃO E AVATAR ================= */
 .btn-primary {
-    background: linear-gradient(135deg, #00529b, #0066c0);
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.7rem 1.8rem;
-    border-radius: 50px; /* Formato pílula é mais moderno */
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    /* Sombra colorida da mesma cor do botão */
-    box-shadow: 0 4px 15px rgba(0, 82, 155, 0.25); 
+    transition: background-color 0.2s;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 82, 155, 0.4);
+    background-color: var(--primary-hover);
 }
 
 .avatar {
-    width: 42px;
-    height: 42px;
-    background-color: white;
-    border: 2px solid #f1f5f9;
+    width: 40px;
+    height: 40px;
+    background-color: #e2e8f0;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #64748b;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    font-size: 1.2rem;
 }
 
-.avatar:hover {
-    border-color: #00529b;
-    color: #00529b;
+.container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
 }
 
-/* ================= HERO SECTION (Apresentação) ================= */
 .hero {
     text-align: center;
-    padding: 5rem 1rem 4rem; /* Mais respiro em cima e embaixo */
+    margin-bottom: 4rem;
+}
+
+.hero-image-wrapper {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-/* Estilo para a logo livre de caixas */
 .hero-logo {
-    width: 130px; 
-    height: auto;
-    margin-bottom: 2.5rem;
-    /* Sombra que se molda ao formato da logo */
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.06)); 
-    /* Animação suave flutuante (Opcional, mas dá um toque premium) */
-    animation: float 6s ease-in-out infinite; 
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0px); }
+    max-width: 150px;
 }
 
 .hero h1 {
-    font-size: 3rem; /* Título maior com mais impacto */
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 1.2rem;
-    letter-spacing: -1px; /* Letras levemente mais juntas */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
 }
 
 .hero p {
-    font-size: 1.15rem;
-    color: #64748b;
+    color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.7;
-}
-
-/* Responsividade da Nav */
-@media (min-width: 768px) {
-    .nav-links {
-        display: flex;
-    }
+    line-height: 1.6;
 }
 
 .cards-grid {
