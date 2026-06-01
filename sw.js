@@ -9,7 +9,6 @@ const ASSETS_TO_CACHE = [
   'Images/LogoItaipu.png' 
 ];
 
-// ... o resto do arquivo continua exatamente igual
 
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Instalando e cacheando assets');
