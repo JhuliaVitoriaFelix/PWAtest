@@ -110,19 +110,18 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } } // Esconde a legenda para ficar limpo
+                plugins: { legend: { display: false } } 
             }
         });
 
-        // Lógica para desenhar o Gráfico de Pizza
         const ctxPie = document.getElementById('pieChart').getContext('2d');
         new Chart(ctxPie, {
             type: 'doughnut', 
             data: {
-                labels: ['Pesquisa', 'Operações', 'Administração', 'Público Externo'],
+                labels: ['Desmatada', 'Densa', 'Urbana', 'Água'],
                 datasets: [{
-                    data: [45, 25, 20, 10], 
-                    backgroundColor: ['#00529b', '#ffb703', '#e63946', '#2a9d8f'], 
+                    data: [35, 25, 20, 20], 
+                    backgroundColor: ['#8B4513', '#006400', '#8FBC8F', '#48D1CC'], 
                     borderWidth: 0
                 }]
             },
@@ -130,7 +129,7 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'bottom' } // Coloca a legenda embaixo
+                    legend: { position: 'bottom' } 
                 }
             }
         });
