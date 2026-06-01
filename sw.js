@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-itaipu-v4';
+const CACHE_NAME = 'pwa-itaipu-v5';
 
 const ASSETS_TO_CACHE = [
   '/',
@@ -7,7 +7,8 @@ const ASSETS_TO_CACHE = [
   'estatisticas.html',
   'style.css',
   'manifest.json',
-  'Images/LogoItaipu.png' 
+  'Images/LogoItaipu.png',
+  'Images/MapaNdvi.jpeg'
 ];
 
 
