@@ -29,7 +29,7 @@
                 <img src="Images/LogoItaipu.png" alt="Logo Itaipu Parquetec" class="hero-logo" onerror="this.style.display='none'">
             </div>
             <h1>Bem-vindo ao GeoView</h1>
-            <p>Uma plataforma de inteligência e visualização de dados vibrantes.</p>
+            <p>Uma plataforma de mapeamento, visualização e análise de dados geográficos.</p>
         </section>
 
         <section class="cards-grid">
@@ -48,7 +48,7 @@
             <div class="feature-card" onclick="navegar('estatisticas')">
                 <div class="icon-wrapper">
                 </div>
-                <h2>Ver Estatísticas</h2>
+                <h2>Visualizar Estatísticas</h2>
                 <p>Analise tendências e projeções futuras através de gráficos intuitivos.</p>
                 <a href="#" class="card-link">Explorar dados &rarr;</a>
                 <div class="card-graphic graphic-chart">
@@ -63,7 +63,7 @@
             <div class="feature-card" onclick="navegar('tutorial')">
                 <div class="icon-wrapper">
                 </div>
-                <h2>Como Usar o App</h2>
+                <h2>Como usar as ferramentas</h2>
                 <p>Aprenda a dominar todas as ferramentas do GeoView com nossos tutoriais rápidos e guias práticos.</p>
                 <a href="#" class="card-link">Ver tutoriais &rarr;</a>
                 <div class="card-graphic graphic-video">
@@ -80,14 +80,13 @@
 
     <footer class="footer">
         <div class="footer-brand">
-            <strong>Prism Insight</strong>
-            <p>&copy; 2024 Prism Insight. Intelligence, vibrant, and organized data solutions.</p>
+            <strong>GeoView</strong>
+            <p>&copy; 2026 GeoView.</p>
         </div>
         <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Help Center</a>
-            <a href="#">Global Reach</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Serviço</a>
+            <a href="#">Central de Ajuda</a>
         </div>
     </footer>
 
@@ -96,9 +95,7 @@
             navigator.serviceWorker.register('sw.js');
         }
 
-        // Nova função de navegação
         function navegar(destino) {
-            // Redireciona para a página baseada no nome do destino
             window.location.href = destino + '.html';
         }
     </script>
