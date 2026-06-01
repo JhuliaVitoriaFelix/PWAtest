@@ -1,9 +1,10 @@
-const CACHE_NAME = 'pwa-itaipu-v3';
+const CACHE_NAME = 'pwa-itaipu-v4';
 
 const ASSETS_TO_CACHE = [
   '/',
   'index.html',
-  'tutorial.html', // <-- Adicionado aqui!
+  'tutorial.html',
+  'estatisticas.html',
   'style.css',
   'manifest.json',
   'Images/LogoItaipu.png' 
