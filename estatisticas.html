@@ -12,11 +12,14 @@
 
     <style>
         .chart-section {
-            background: white;
+            background: linear-gradient(150deg, rgba(14, 36, 68, 0.78) 0%, rgba(8, 18, 36, 0.92) 100%);
+            border: 1px solid rgba(28, 72, 124, 0.42);
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
             gap: 2rem;
@@ -29,17 +32,20 @@
             justify-content: center;
         }
         .chart-text h2 {
-            color: var(--primary-color);
+            color: var(--water-light);
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
         .chart-text p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
         }
-        
+        .chart-text strong { color: var(--text-primary); }
+        .chart-text em { color: var(--moss-300); }
+
         @media (min-width: 768px) {
             .chart-section.row {
                 flex-direction: row;
@@ -94,42 +100,73 @@
     </main>
 
     <script>
-       
+        Chart.defaults.color = '#7aaec6';
+        Chart.defaults.borderColor = 'rgba(28, 72, 124, 0.28)';
+
         const ctxBar = document.getElementById('barChart').getContext('2d');
         new Chart(ctxBar, {
             type: 'bar',
             data: {
-                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'], 
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
                 datasets: [{
-                    label: 'Quantidade de Acessos',
-                    data: [1200, 1900, 1500, 2200, 3100, 2800], 
-                    backgroundColor: '#808000', 
-                    borderRadius: 6 
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } } 
-            }
-        });
-
-        const ctxPie = document.getElementById('pieChart').getContext('2d');
-        new Chart(ctxPie, {
-            type: 'doughnut', 
-            data: {
-                labels: ['Desmatada', 'Densa', 'Urbana', 'Água'],
-                datasets: [{
-                    data: [35, 25, 20, 20], 
-                    backgroundColor: ['#8B4513', '#006400', '#8FBC8F', '#48D1CC'], 
-                    borderWidth: 0
+                    label: 'Área Afetada (ha)',
+                    data: [1200, 1900, 1500, 2200, 3100, 2800],
+                    backgroundColor: 'rgba(0, 180, 216, 0.65)',
+                    borderColor: 'rgba(72, 202, 228, 0.9)',
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    hoverBackgroundColor: 'rgba(72, 202, 228, 0.8)'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'bottom' } 
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(8, 18, 36, 0.92)',
+                        borderColor: 'rgba(28, 72, 124, 0.5)',
+                        borderWidth: 1,
+                        titleColor: '#ddeef7',
+                        bodyColor: '#7aaec6'
+                    }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(28, 72, 124, 0.2)' } },
+                    y: { grid: { color: 'rgba(28, 72, 124, 0.2)' } }
+                }
+            }
+        });
+
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['Desmatada', 'Densa', 'Urbana', 'Água'],
+                datasets: [{
+                    data: [35, 25, 20, 20],
+                    backgroundColor: ['#c9a96e', '#2d6a4f', '#4a7c8a', '#00b4d8'],
+                    borderColor: 'rgba(5, 13, 27, 0.8)',
+                    borderWidth: 2,
+                    hoverBorderColor: 'rgba(72, 202, 228, 0.6)',
+                    hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#7aaec6', padding: 16, font: { size: 13 } }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(8, 18, 36, 0.92)',
+                        borderColor: 'rgba(28, 72, 124, 0.5)',
+                        borderWidth: 1,
+                        titleColor: '#ddeef7',
+                        bodyColor: '#7aaec6'
+                    }
                 }
             }
         });
